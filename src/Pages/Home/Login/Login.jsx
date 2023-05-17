@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 const Login = () => {
+    const {singInUser , loginGoogle} = useContext(AuthContext)
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const email = data.email ;
+    const password = data.password;
+    singInUser(email,password)
+    .then(res => {
+        const  lodgingUser = res.user 
+        console.log(lodgingUser)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+  };
+
+  const handelGoogleLogin = ()=>{
+    loginGoogle()
+    .then(res => {
+        const googleLogin = res.use ;
+        console.log(googleLogin)
+    })
+    .catch(error => {
+        console.log(error.message)
+    })
+  }
+
   return (
     <div className=" bg-green-500">
       <div className="py-4">
@@ -53,7 +79,9 @@ const Login = () => {
             <hr className=" border my-4 w-5/12 " />
           </div>
           <div className="flex justify-between">
-            <button className="btn btn-success w-5/12 ">Success</button>
+            <button onClick={handelGoogleLogin} className="btn btn-success w-5/12 ">
+                <FaGoogle className="me-2"></FaGoogle> Google
+            </button>
             <button className="btn btn-success w-5/12">Success</button>
           </div>
         </div>

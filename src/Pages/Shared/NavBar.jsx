@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavBar = () => {
-    const user = ''
+  const { user, logOut } = useContext(AuthContext);
+  const handelLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error.message));
+  };
   const nevItem = (
     <>
-      <Link to='/'><li className="btn btn-ghost" >Home</li></Link>
+      <Link to="/">
+        <li className="btn btn-ghost">Home</li>
+      </Link>
       <li className="btn btn-ghost"> All Toys</li>
       {user && (
         <>
@@ -14,8 +22,20 @@ const NavBar = () => {
         </>
       )}
       <li className="btn btn-ghost"> Blogs</li>
-      <Link to='/login'><li className="btn btn-ghost px-2">Login</li></Link>
-      <Link to='/singup'><li className="btn btn-ghost">SingUp</li></Link>
+      {user ? (
+        <Link onClick={handelLogOut} to="/singup">
+          <li className="btn btn-ghost">SingOut</li>
+        </Link>
+      ) : (
+        <>
+          <Link to="/login">
+            <li className="btn btn-ghost px-2">Login</li>
+          </Link>
+          <Link to="/singup">
+            <li className="btn btn-ghost">SingUp</li>
+          </Link>
+        </>
+      )}
     </>
   );
 
@@ -52,7 +72,9 @@ const NavBar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu  menu-horizontal px-1">{nevItem}</ul>
         </div>
-        <div >Hello</div>
+        {user && (
+          <img className="w-16 h-16 rounded-full" src={user?.photoURL} alt="" />
+        )}
       </div>
     </div>
   );

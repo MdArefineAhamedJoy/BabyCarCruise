@@ -39,9 +39,9 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscript = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
-      setLoading(false);
       unSubscript();
     };
   }, []);
@@ -52,6 +52,7 @@ const AuthProvider = ({ children }) => {
     loginGoogle,
     logOut,
     user,
+    loading
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

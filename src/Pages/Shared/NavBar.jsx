@@ -28,7 +28,7 @@ const NavBar = () => {
           </Link>
         </>
       )}
-      <li className="btn btn-ghost"> Blogs</li>
+      <Link to='/blog'><li className="btn btn-ghost"> Blogs</li></Link>
       {user ? (
         <Link onClick={handelLogOut} to="/singup">
           <li className="btn btn-ghost">SingOut</li>
@@ -80,7 +80,7 @@ const NavBar = () => {
           <ul className="menu  menu-horizontal px-1">{nevItem}</ul>
         </div>
         {user && (
-          <img className="w-16 h-16 rounded-full" src={user?.photoURL} alt="" />
+          <img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" />
         )}
       </div>
     </div>

@@ -9,6 +9,8 @@ import Main from "../LayOut/Main";
 import MyToys from "../Pages/Home/MyToys/MyToys";
 import AddToys from "../Pages/Home/AddToys/AddToys";
 import AllToys from "../Pages/Home/AllToys/AllToys";
+import Blog from "../Pages/Home/Blog/Blog";
+import PrivateRouts from "./PrivateRouts";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
         },
         {
           path:'addtoys',
-          element:<AddToys></AddToys>
+          element:<PrivateRouts><AddToys></AddToys></PrivateRouts>
         },
         {
             path:'singup',
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
         {
           path:'mytoys',
           element:<MyToys></MyToys>
+        },
+        {
+          path:'blog',
+          element:<Blog></Blog> 
         }
       ]
     },

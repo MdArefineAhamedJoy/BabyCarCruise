@@ -38,7 +38,6 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscript = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
       setUser(currentUser);
     });
     return () => {

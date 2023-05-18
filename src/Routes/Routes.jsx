@@ -6,6 +6,9 @@ import Login from "../Pages/Home/Login/Login";
 import SingUp from "../Pages/Home/Login/SingUp";
 import ErrorPage from "../Components/ErrorPage";
 import Main from "../LayOut/Main";
+import MyToys from "../Pages/Home/MyToys/MyToys";
+import AddToys from "../Pages/Home/AddToys/AddToys";
+import AllToys from "../Pages/Home/AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -22,8 +25,21 @@ const router = createBrowserRouter([
             element:<Login></Login>
         },
         {
+          path:'alltoys',
+          element:<AllToys></AllToys>,
+          loader:() => fetch(`http://localhost:5000/category`)
+        },
+        {
+          path:'addtoys',
+          element:<AddToys></AddToys>
+        },
+        {
             path:'singup',
             element:<SingUp></SingUp>
+        },
+        {
+          path:'mytoys',
+          element:<MyToys></MyToys>
         }
       ]
     },

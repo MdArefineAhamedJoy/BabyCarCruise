@@ -14,11 +14,18 @@ const NavBar = () => {
       <Link to="/">
         <li className="btn btn-ghost">Home</li>
       </Link>
-      <li className="btn btn-ghost"> All Toys</li>
+      <Link to="alltoys">
+        <li className="btn btn-ghost"> All Toys</li>
+      </Link>
+
       {user && (
         <>
-          <li className="btn btn-ghost"> My Toys</li>
-          <li className="btn btn-ghost"> Add A Toy</li>
+          <Link to="/mytoys ">
+            <li className="btn btn-ghost"> My Toys</li>
+          </Link>
+          <Link to="/addtoys">
+            <li className="btn btn-ghost"> Add A Toy</li>
+          </Link>
         </>
       )}
       <li className="btn btn-ghost"> Blogs</li>

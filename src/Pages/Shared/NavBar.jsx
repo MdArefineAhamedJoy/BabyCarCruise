@@ -80,7 +80,7 @@ const NavBar = () => {
           <ul className="menu  menu-horizontal px-1">{nevItem}</ul>
         </div>
         {user && (
-          <img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" />
+          <img className="w-9 h-9 rounded-full" src={user?.photoURL} alt="" />
         )}
       </div>
     </div>

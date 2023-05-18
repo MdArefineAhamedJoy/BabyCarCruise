@@ -84,6 +84,11 @@ const AddToys = () => {
               <option value="Avenger">Avenger</option>
               <option value="Soldier">Soldier</option>
             </select>
+            <textarea
+              className=" w-full "
+              placeholder="Rating"
+              {...register("rating", { required: true })}
+            />
           </div>
           <input
             className="block btn mx-auto  w-full text-center mt-7 "

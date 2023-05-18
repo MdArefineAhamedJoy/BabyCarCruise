@@ -1,9 +1,14 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect } from 'react';
+
 
 const AllToys = () => {
-    const data = useLoaderData()
-    console.log(data)
+    useEffect(()=>{
+        fetch('http://localhost:5000/categorys')
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
+    },[])
     return (
         <div>
             

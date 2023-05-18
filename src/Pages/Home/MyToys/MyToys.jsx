@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const MyToys = () => {
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [email]);
+  console.log(myToys)
   return (
     <div>
       <div className="overflow-x-auto w-full">
@@ -17,53 +19,63 @@ const MyToys = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
+              <th>NO</th>
+              <th>Product Image</th>
+              <th>Sailor Details
               </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
+              <th>Quantity</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div className="flex items-center space-x-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img
-                        src="/tailwind-css-component-profile-2@56w.png"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+            {myToys.map((toys,index) => (
+              <tr>
+                <th>
+                    {index + 1}
+                </th>
+                <td>
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img
+                          src={toys.image}
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-bold">{toys?.categoryName}</div>
+                      <div className="text-sm opacity-50">{toys?.name}</div>
                     </div>
                   </div>
-                  <div>
-                    <div className="font-bold">Hart Hagerty</div>
-                    <div className="text-sm opacity-50">United States</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Zemlak, Daniel and Leannon
-                <br />
-                <span className="badge badge-ghost badge-sm">
-                  Desktop Support Technician
-                </span>
-              </td>
-              <td>Purple</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
+                </td>
+                <td>
+                  <span className="badge badge-ghost badge-sm">
+                    {toys?.sellerName}
+                  </span>
+                  <br />
+                  {toys?.email}
+    
+                </td>
+                <td>
+                    <span>Quantity :{toys?.availableQuantity}</span>
+                    <br />
+                    <span>Rating : {toys?.rating}</span>
+                </td>
+                <th>
+                  <button className="btn btn-circle  bg-green-950">
+                    <FaEdit  className="h-5 w-5"></FaEdit>
+                  </button>
+                </th>
+                <th>
+                  <button className="btn btn-circle bg-red-300">
+                    <FaTrashAlt className="h-5 w-5"></FaTrashAlt>
+                  </button>
+                </th>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

@@ -35,16 +35,13 @@ const MyToys = () => {
       });
   };
 
-  const handelUpdate = (data)=>{
-    
-  }
+  const handelUpdate = (data) => {
+    console.log(data)
+  };
 
   return (
     <div>
       <div className="overflow-x-auto w-full">
-        {/* model body */}
-
-        {/* model body end */}
         <table className="table w-full">
           {/* head */}
           <thead>
@@ -90,7 +87,10 @@ const MyToys = () => {
                   <span>Rating : {toys?.rating}</span>
                 </td>
                 <th>
-                  <button onClick={()=>handelUpdate(toys)} className="btn btn-circle  bg-green-950">
+                  <button
+                    onClick={() => handelUpdate(toys)}
+                    className="btn btn-circle  bg-green-950"
+                  >
                     <FaEdit className="h-5 w-5"></FaEdit>
                   </button>
                 </th>

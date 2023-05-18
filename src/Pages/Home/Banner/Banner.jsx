@@ -1,6 +1,5 @@
 import React from "react";
-import img1 from '../../../assets/istockphoto-1346110565-170667a.jpg'
-import img2 from '../../../assets/istockphoto-534507755-170667a.jpg'
+import img from '../../../assets/istockphoto-534507755-170667a.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 const Banner = () => {
@@ -69,15 +68,15 @@ const Banner = () => {
       </div> */}
        <Carousel>
                 <div>
-                    <img src={img1} />
+                    <img src={img} />
                     <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, laborum, ad eligendi maiores incidunt doloremque ab dignissimos doloribus mollitia ratione cum porro facere! Ullam, iste fugiat. Aliquam nemo ex soluta.</div>
                 </div>
                 <div>
-                    <img src={img2} />
+                    <img src={img} />
 
                 </div>
                 <div>
-                    <img src={img1} />
+                    <img src={img} />
 
                 </div>
             </Carousel>

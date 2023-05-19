@@ -3,17 +3,18 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import MyModal from "../../../Components/UpdateData";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const email = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/${email}`)
+    fetch(`http://localhost:5000/user/${email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [email, myToys]);
-
+  
   const handelDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -35,8 +36,20 @@ const MyToys = () => {
       });
   };
 
-  const handelUpdate = (data) => {
-    console.log(data)
+  const handelUpdate = (_id) => {
+    fetch(`http://localhost:5000/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        }
+      });
   };
 
   return (
@@ -63,7 +76,7 @@ const MyToys = () => {
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img
-                          src={toys.image}
+                          src={toys.photo}
                           alt="Avatar Tailwind CSS Component"
                         />
                       </div>
@@ -87,12 +100,14 @@ const MyToys = () => {
                   <span>Rating : {toys?.rating}</span>
                 </td>
                 <th>
-                  <button
-                    onClick={() => handelUpdate(toys)}
-                    className="btn btn-circle  bg-green-950"
-                  >
-                    <FaEdit className="h-5 w-5"></FaEdit>
-                  </button>
+                  <Link to='/:id'>
+                    <button
+                      onClick={() => handelUpdate(toys._id)}
+                      className="btn btn-circle  bg-green-950"
+                    >
+                      <FaEdit className="h-5 w-5"></FaEdit>
+                    </button>
+                  </Link>
                 </th>
                 <th>
                   <button

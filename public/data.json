@@ -1,0 +1,100 @@
+[
+    {
+      "photo": "https://media.istockphoto.com/id/172609357/photo/a-red-toy-racing-car-with-a-driver-on-a-white-background.jpg?b=1&s=170667a&w=0&k=20&c=e3FH2js_jUVBxnR6npmD2RPHww0ArJOueoLZxsL5hdg=",
+      "email": "email1@example.com",
+      "name": "Product 1",
+      "sellerName": "Seller 1",
+      "price": 9.99,
+      "availableQuantity": 5,
+      "rating": 4.2,
+      "categoryName": "Sports",
+      "description":"This is a The Popular Sports Toys Car"
+    },
+    {
+      "photo": "https://images.unsplash.com/photo-1511377537649-c17e440ef4b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNwb3J0cyUyMHRveXMlMjBjYXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
+      "email": "email2@example.com",
+      "name": "Product 2",
+      "sellerName": "Seller 2",
+      "price": 14.99,
+      "availableQuantity": 3,
+      "rating": 3.8,
+      "categoryName": "Sports",
+      "description":"This is a The Sports Toy Car"
+    },
+    {
+      "photo": "https://images.unsplash.com/photo-1618325366510-289151181310?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3BvcnRzJTIwdG95cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "email": "email3@example.com",
+      "name": "Product 3",
+      "sellerName": "Seller 3",
+      "price": 24.99,
+      "availableQuantity": 8,
+      "rating": 4.7,
+      "categoryName": "Sports",
+      "description":"This is a The Latest Sports Toys Car"
+    },
+    {
+      "photo": "https://media.istockphoto.com/id/1389361314/photo/pickup-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=MhvIGIZz6SHk1EszOGFkUZOINeeDNPqVAzKLNqkUL9Y=",
+      "email": "email4@example.com",
+      "name": "Product 4",
+      "sellerName": "Seller 4",
+      "price": 7.99,
+      "availableQuantity": 2,
+      "rating": 3.5,
+      "categoryName": "Avenger",
+      "description":"This is a The Avenger Sports Toys Car"
+    },
+    {
+      "photo": "https://media.istockphoto.com/id/184642704/photo/young-boy-stopping-a-toy-suv-in-its-tracks.jpg?b=1&s=170667a&w=0&k=20&c=gdGAfISG41VEofUIOnP3cwMawH_iWUIg70LKgI7pK0Q=",
+      "email": "email5@example.com",
+      "name": "Product 5",
+      "sellerName": "Seller 5",
+      "price": 39.99,
+      "availableQuantity": 12,
+      "rating": 4.9,
+      "categoryName": "Avenger",
+      "description":"This is a The Avenger Toys Car"
+    },
+    {
+      "photo": "https://media.istockphoto.com/id/1347058266/photo/yellow-monster-truck-or-monster-car.jpg?b=1&s=170667a&w=0&k=20&c=MJ_WEMAVM_Phgu4DbHqCSVisRhCtIi47Soohse-7PIg=",
+      "email": "email6@example.com",
+      "name": "Product 6",
+      "sellerName": "Seller 6",
+      "price": 29.99,
+      "availableQuantity": 6,
+      "rating": 4.3,
+      "categoryName": "Avenger",
+      "description":"This is a The Best Avenger Toys Car"
+    },
+    {
+      "photo": "https://media.istockphoto.com/id/1426841661/photo/toy-fire-truck-car-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=nVag1G86g7xu_Lhi7j21hc78S1ChvUW-lbdfXXP7f-4=",
+      "email": "email7@example.com",
+      "name": "Product 7",
+      "sellerName": "Seller 7",
+      "price": 17.99,
+      "availableQuantity": 4,
+      "rating": 4.1,
+      "description":"This is a Soldier Emergency Toys Cars "
+    },
+    {
+      "photo": "https://media.istockphoto.com/id/176003220/photo/dinky-toy-jeep.jpg?b=1&s=170667a&w=0&k=20&c=-jYxARcqhzIoRDyAQb3dJ4tAttwrbkM2reGYVZQ2GyM=",
+      "email": "email8@example.com",
+      "name": "Product 8",
+      "sellerName": "Seller 8",
+      "price": 12.99,
+      "availableQuantity": 7,
+      "rating": 4.6,
+      "categoryName": "Soldier",
+      "description":"This is a Soldier Duty Toys Cars "
+    },
+    {
+      "photo": "https://media.istockphoto.com/id/1207135489/photo/military-patrol-car-army-war-concept-armored-vehicle-with-soldiers-ready-to-attack-artwork.jpg?b=1&s=170667a&w=0&k=20&c=AUilCZ-t2IkuHb1Y_-ooJVO5JGJIAQylsF9dZ5Wp8q8=",
+      "email": "email9@example.com",
+      "name": "Product 9",
+      "sellerName": "Seller 9",
+      "price": 49.99,
+      "availableQuantity": 9,
+      "rating": 4.8,
+      "categoryName": "Soldier",
+      "description":"This is a Soldier Toys Cars "
+    }
+  ]

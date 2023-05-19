@@ -12,6 +12,7 @@ const AllToys = () => {
   }, [allData]);
   return (
     <div>
+      <input className="bg-red-500 w-6/12 mx-auto block" type="text" />
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}

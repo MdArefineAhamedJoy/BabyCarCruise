@@ -11,6 +11,7 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    console.log(data)
     fetch(`http://localhost:5000/category`, {
       method: "POST",
       headers: {
@@ -86,8 +87,8 @@ const AddToys = () => {
             </select>
             <textarea
               className=" w-full "
-              placeholder="Rating"
-              {...register("rating", { required: true })}
+              placeholder="Description"
+              {...register("description", { required: true })}
             />
           </div>
           <input

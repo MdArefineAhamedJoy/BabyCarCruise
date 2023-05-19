@@ -25,7 +25,7 @@ const MyToys = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     });
-    fetch(`http://localhost:5000/${_id}`, {
+    fetch(`http://localhost:5000/deletes/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -37,12 +37,8 @@ const MyToys = () => {
   };
 
   const handelUpdate = (_id) => {
-    fetch(`http://localhost:5000/${_id}`, {
+    fetch(`http://localhost:5000/delete/${_id}`, {
       method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(),
     })
       .then((res) => res.json())
       .then((data) => {

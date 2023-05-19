@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const UpdateData = () => {
+    const details = useLoaderData()
+    useEffect(()=>{
+        fetch()
+    },[])
     return (
         <div>
             

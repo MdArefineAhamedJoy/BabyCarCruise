@@ -16,38 +16,30 @@ const MyToys = () => {
   }, [email, myToys]);
   
   const handelDelete = (_id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    });
-    fetch(`http://localhost:5000/deletes/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/deletes/${_id}`, {
+            method: "DELETE",
+          })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
         }
-      });
+      })
   };
 
-  const handelUpdate = (_id) => {
-    fetch(`http://localhost:5000/delete/${_id}`, {
-      method: "PUT",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        }
-      });
-  };
-
+  
   return (
     <div>
       <div className="overflow-x-auto w-full">
@@ -96,7 +88,7 @@ const MyToys = () => {
                   <span>Rating : {toys?.rating}</span>
                 </td>
                 <th>
-                  <Link to='/:id'>
+                  <Link to={`/update/${toys._id}`}>
                     <button
                       onClick={() => handelUpdate(toys._id)}
                       className="btn btn-circle  bg-green-950"

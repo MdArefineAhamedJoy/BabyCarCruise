@@ -18,14 +18,14 @@ const Category = () => {
 
   console.log(categoryData);
   return (
-    <div className="my-24">
+    <div className="my-10">
       <Tabs>
-        <TabList className="text-center my-10 flex justify-center  pb-10">
+        <TabList className="text-center md:w-1/2 mx-auto my-10 flex gap-2  justify-center  py-3 ">
           <button
             className={
               categoryName === "Sports"
-                ? "text-white hover:bg-sky-500 duration-300 py-3 px-6 text-lg font-semibold bg-sky-400"
-                : "py-3 px-6 text-lg font-semibold"
+                ? "text-white   hover:bg-sky-500 duration-300 py-3 px-6 text-lg font-semibold bg-sky-400"
+                : "py-3 px-6 border border-sky-500 text-lg font-semibold"
             }
           >
             <Tab onClick={() => handleCategory("Sports")}>Sports</Tab>
@@ -34,7 +34,7 @@ const Category = () => {
             className={
               categoryName === "Avenger"
                 ? "text-white hover:bg-sky-500 duration-300 py-3 px-6 text-lg font-semibold bg-sky-400"
-                : "py-3 px-6 text-lg font-semibold"
+                : "py-3 px-6 border border-sky-500 text-lg font-semibold"
             }
           >
             <Tab onClick={() => handleCategory("Avenger")}>Avenger</Tab>
@@ -43,7 +43,7 @@ const Category = () => {
             className={
               categoryName === "Soldier"
                 ? "text-white hover:bg-sky-500 duration-300 py-3 px-6 text-lg font-semibold bg-sky-400"
-                : "py-3 px-6 text-lg font-semibold"
+                : "py-3 px-6 border border-sky-500 text-lg font-semibold"
             }
           >
             <Tab onClick={() => handleCategory("Soldier")}>Soldier</Tab>
@@ -51,10 +51,10 @@ const Category = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 pt-10 gap-5">
             {categoryData.map((data) => (
               <div key={data._id}>
-                <div className="card relative   card-compact w-full bg-zinc-300 shadow-lg">
+                <div className="card relative rounded-md  card-compact w-full bg-zinc-300 shadow-lg">
                   <figure className="w-full h-56">
                     <img src={data.photo} alt="Shoes" />
                   </figure>
@@ -67,7 +67,7 @@ const Category = () => {
                       </div>
                     </div>
                     <Link to={`category/${data._id}`}>
-                      <button className="w-full py-3 absolute bottom-0 rounded-b-2xl p-0   bg-sky-400 hover:bg-sky-500 duration-500 text-white font-semibold">
+                      <button className="w-full py-3 absolute bottom-0 rounded-b-md p-0   bg-sky-400 hover:bg-sky-500 duration-500 text-white font-semibold">
                         Show Details
                       </button>
                     </Link>

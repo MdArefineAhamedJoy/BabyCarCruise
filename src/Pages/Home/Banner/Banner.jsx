@@ -69,7 +69,6 @@ const Banner = () => {
        <Carousel>
                 <div>
                     <img src={img} />
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, laborum, ad eligendi maiores incidunt doloremque ab dignissimos doloribus mollitia ratione cum porro facere! Ullam, iste fugiat. Aliquam nemo ex soluta.</div>
                 </div>
                 <div>
                     <img src={img} />

@@ -48,7 +48,7 @@ const Login = () => {
             <h3 className="text-4xl font-bold ">Login </h3>
             <p>
               Does n't have an account yet ?{" "}
-              <Link className="link ">SingUp</Link>
+              <Link to='/singup' className="link">SingUp</Link>
             </p>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>

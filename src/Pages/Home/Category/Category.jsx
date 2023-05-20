@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 
 const Category = () => {
+  const { user } = useContext(AuthContext)
   const [categoryName, setCategoryName] = useState("Sports");
   const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
@@ -66,8 +68,8 @@ const Category = () => {
                       <p>Price : {data.price}</p>
                       </div>
                     </div>
-                    <Link to={`category/${data._id}`}>
-                      <button className="w-full py-3 absolute bottom-0 rounded-b-md p-0   bg-sky-400 hover:bg-sky-500 duration-500 text-white font-semibold">
+                    <Link to={user ? `category/${data._id}` : ""}>
+                      <button  className="w-full py-3 absolute bottom-0 rounded-b-md p-0   bg-sky-400 hover:bg-sky-500 duration-500 text-white font-semibold">
                         Show Details
                       </button>
                     </Link>

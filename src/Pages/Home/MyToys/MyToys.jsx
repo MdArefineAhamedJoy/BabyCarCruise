@@ -3,7 +3,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-import MyModal from "../../../Components/UpdateData";
+
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -13,7 +13,7 @@ const MyToys = () => {
     fetch(`http://localhost:5000/user/${email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [email, myToys]);
+  }, [email]);
   
   const handelDelete = (_id) => {
       Swal.fire({
@@ -39,9 +39,29 @@ const MyToys = () => {
       })
   };
 
+  const handelShort=()=>{
+    fetch(`http://localhost:5000/shortData/${email}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if(data){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Data Short Successfully',
+          showConfirmButton: false,
+          timer: 1000
+        })
+        setMyToys(data)
+      }
+
+    });
+  }
   
   return (
     <div>
+      <div className="py-5 ">
+        <button onClick={handelShort} className="btn w-1/4 block mx-auto">Short Data</button>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}

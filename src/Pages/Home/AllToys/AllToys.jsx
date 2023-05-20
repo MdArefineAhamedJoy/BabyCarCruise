@@ -13,8 +13,6 @@ const AllToys = () => {
         setAllData(showData);
       });
   }, []);
-
-
   const {
     register,
     handleSubmit,
@@ -23,19 +21,23 @@ const AllToys = () => {
   } = useForm();
   const onSubmit = (data) => {
     fetch(`http://localhost:5000/searchByName/${data.search}`)
-    .then((res) => res.json())
-    .then((data) => setAllData(data));
+      .then((res) => res.json())
+      .then((data) => setAllData(data));
   };
 
   return (
     <div>
-      <div className="w-9/12  my-8  mx-auto ">
-        <form className="flex" onSubmit={handleSubmit(onSubmit)}>
+      <div className="w-9/12  my-16  mx-auto ">
+        <form className="flex w-8/12 mx-auto" onSubmit={handleSubmit(onSubmit)}>
           <input
-            className="bg-zinc-200 px-4 outline-red-300 w-9/12 py-2  font-semibold text-lg mx-auto block"
-            {...register("search",{ required: true })}
+            className="bg-zinc-200 text-center px-4 outline-red-300 w-10/12 py-2  font-semibold text-lg mx-auto block"
+            {...register("search", { required: true })}
           />
-          <input className="btn w-3/12 btn-outline" type="submit"  value='Search'/>
+          <input
+            className=" w-2/12 outline-sky-400 py-3 border-e-2 border-b-2 border-t-2 border-sky-400 font-lg rounded-e-md ms-[-5px] text-white font-semibold bg-red-400"
+            type="submit"
+            value="Search"
+          />
         </form>
       </div>
       <div className=" w-full hover:bg-slate-500">
@@ -58,10 +60,7 @@ const AllToys = () => {
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={data.photo}
-                          alt="Avatar "
-                        />
+                        <img src={data.photo} alt="Avatar " />
                       </div>
                     </div>
                     <div>

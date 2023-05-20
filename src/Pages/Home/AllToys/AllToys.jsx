@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const AllToys = () => {
   const [allData, setAllData] = useState([]);
@@ -8,19 +9,35 @@ const AllToys = () => {
     fetch("http://localhost:5000/allCategories")
       .then((res) => res.json())
       .then((data) => {
-        const showData = data.slice(0, 20)
+        const showData = data.slice(0, 20);
         setAllData(showData);
       });
   }, []);
+
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    fetch(`http://localhost:5000/searchByName/${data.search}`)
+    .then((res) => res.json())
+    .then((data) => setAllData(data));
+  };
+
   return (
     <div>
-     <div className="w-9/12 my-8 flex mx-auto ">
-     <input
-        className="bg-zinc-200 px-4 outline-red-300 w-9/12 py-2  font-semibold text-lg mx-auto block"
-        type="text"
-      />
-      <button className="btn w-3/12 btn-outline">Search</button>
-     </div>
+      <div className="w-9/12 bg-red-500 my-8  mx-auto ">
+        <form className="flex" onSubmit={handleSubmit(onSubmit)}>
+          <input
+            className="bg-zinc-200 px-4 outline-red-300 w-9/12 py-2  font-semibold text-lg mx-auto block"
+            {...register("search")}
+          />
+          <input className="btn w-3/12 btn-outline" type="submit" />
+        </form>
+      </div>
       <div className=" w-full hover:bg-slate-500">
         <table className="table w-full ">
           {/* head */}
@@ -66,9 +83,7 @@ const AllToys = () => {
 
                 <td>
                   <Link to={`/category/${data._id}`}>
-                    <button
-                      className="py-3 px-8 rounded-md hover:bg-zinc-500 duration-500  text-white bg-zinc-700"
-                    >
+                    <button className="py-3 px-8 rounded-md hover:bg-zinc-500 duration-500  text-white bg-zinc-700">
                       <FaArrowRight></FaArrowRight>
                     </button>
                   </Link>

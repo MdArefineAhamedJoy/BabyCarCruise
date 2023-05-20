@@ -7,7 +7,7 @@ const Discount = () => {
       <div className=" w-1/2 mx-auto  ">
         <div className=" w-11/12 m-5  overflow-hidden relative  cursor-pointer shadow-sm">
           <img
-            className="w-full h-full bg-cover hover:scale-110 rounded transition-all duration-300"
+            className="w-full h-full md:h-[500px]  bg-cover hover:scale-110 rounded transition-all duration-300"
             src={imag2}
             alt=""
           />
@@ -23,7 +23,7 @@ const Discount = () => {
       <div className=" w-1/2 mx-auto  ">
         <div className=" w-11/12 m-5  overflow-hidden relative  cursor-pointer shadow-sm">
           <img
-            className="w-full h-full bg-cover hover:scale-110 rounded transition-all duration-300"
+            className="w-full md:h-[500px] h-full bg-cover hover:scale-110 rounded transition-all duration-300"
             src={imag1}
             alt=""
           />

@@ -54,7 +54,7 @@ const Category = () => {
           <div className="grid md:grid-cols-3 gap-5">
             {categoryData.map((data) => (
               <div key={data._id}>
-                <div className="card relative  card-compact w-96 bg-zinc-300 shadow-lg">
+                <div className="card relative   card-compact w-full bg-zinc-300 shadow-lg">
                   <figure className="w-full h-56">
                     <img src={data.photo} alt="Shoes" />
                   </figure>

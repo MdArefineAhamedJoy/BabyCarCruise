@@ -62,7 +62,7 @@ const MyToys = () => {
                 <td>
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
+                      <div className="mask mask-squircle w-20 h-20">
                         <img
                           src={toys.photo}
                           alt="Avatar Tailwind CSS Component"
@@ -86,7 +86,8 @@ const MyToys = () => {
                   <span>Quantity :{toys?.availableQuantity}</span>
                   <br />
                   <span>Rating : {toys?.rating}</span>
-                  <span>Rating : {toys?.price}</span>
+                  <br />
+                  <span>Price : {toys?.price}</span>
                 </td>
                 <th>
                   <Link to={`/update/${toys._id}`}>

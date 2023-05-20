@@ -13,6 +13,9 @@ import Blog from "../Pages/Home/Blog/Blog";
 import PrivateRouts from "./PrivateRouts";
 import Details from "../Pages/Home/Details/Details";
 import UpdateData from "../Components/UpdateData";
+import ShowAllDetails from "../Components/ShowAllDetails";
+
+
 
 const router = createBrowserRouter([
     {

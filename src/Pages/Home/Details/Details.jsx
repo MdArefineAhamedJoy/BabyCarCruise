@@ -22,8 +22,8 @@ const Details = () => {
         {categoryName}
       </h2>
       <div className="card lg:card-side bg-base-300 shadow-xl">
-        <figure className="w-1/2">
-          <img className="w-full" src={photo} alt="Album" />
+        <figure className="w-1/2 ">
+          <img className="w-full h-full" src={photo} alt="Album" />
         </figure>
         <div className="card-body  pt-7">
           <h2 className="card-title pb-3">

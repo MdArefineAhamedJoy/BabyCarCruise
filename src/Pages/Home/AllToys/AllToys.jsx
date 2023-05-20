@@ -65,7 +65,7 @@ const AllToys = () => {
                 </td>
 
                 <td>
-                  <Link to={`category/${data._id}`}>
+                  <Link to={`/category/${data._id}`}>
                     <button
                       className="py-3 px-8 rounded-md hover:bg-zinc-500 duration-500  text-white bg-zinc-700"
                     >

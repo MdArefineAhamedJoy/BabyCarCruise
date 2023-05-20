@@ -16,7 +16,7 @@ const Banner = () => {
           className="max-w-md"
         >
           <h1 className="md:mb-5 text-3xl   md:text-5xl font-bold">
-            Best Kids STore and Online Shop{" "}
+            Best Kids Store and Online Shop{" "}
           </h1>
           <p className="mb-5 ">
             {" "}

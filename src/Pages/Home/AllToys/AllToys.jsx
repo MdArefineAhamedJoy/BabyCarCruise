@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import ChangeTitle from "../../../Components/ChangeTitle";
 
+
+
 const AllToys = () => {
   const [allData, setAllData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allCategories")
+    fetch("https://baby-car-cruise-server.vercel.app/allCategories")
       .then((res) => res.json())
       .then((data) => {
         const showData = data.slice(0, 20);
@@ -21,7 +23,7 @@ const AllToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/searchByName/${data.search}`)
+    fetch(`https://baby-car-cruise-server.vercel.app/searchByName/${data.search}`)
       .then((res) => res.json())
       .then((data) => setAllData(data));
   };

@@ -54,12 +54,12 @@ const router = createBrowserRouter([
         {
           path:'category/:_id',
           element:<PrivateRouts><Details></Details></PrivateRouts>,
-          loader: ({params}) => fetch(`http://localhost:5000/categoryDetails/${params._id}`)
+          loader: ({params}) => fetch(`https://baby-car-cruise-server.vercel.app/categoryDetails/${params._id}`)
         },
         {
           path:'update/:_id',
           element:<UpdateData></UpdateData>,
-          loader: ({params}) => fetch(`http://localhost:5000/update/${params._id}`)
+          loader: ({params}) => fetch(`https://baby-car-cruise-server.vercel.app/update/${params._id}`)
         }
       ]
     },

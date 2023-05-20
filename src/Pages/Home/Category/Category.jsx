@@ -9,7 +9,7 @@ const Category = () => {
   const [categoryName, setCategoryName] = useState("Sports");
   const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/category/${categoryName}`)
+    fetch(`https://baby-car-cruise-server.vercel.app/category/${categoryName}`)
       .then((res) => res.json())
       .then((data) => setCategoryData(data));
   }, [categoryName]);

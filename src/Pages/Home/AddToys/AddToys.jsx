@@ -12,7 +12,7 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/category`, {
+    fetch(`https://baby-car-cruise-server.vercel.app/category`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

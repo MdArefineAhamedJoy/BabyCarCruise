@@ -11,7 +11,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const email = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://baby-car-cruise-server.vercel.app/user/${email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [email]);
@@ -27,7 +27,7 @@ const MyToys = () => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/deletes/${_id}`, {
+          fetch(`https://baby-car-cruise-server.vercel.app/deletes/${_id}`, {
             method: "DELETE",
           })
           .then((res) => res.json())
@@ -41,7 +41,7 @@ const MyToys = () => {
   };
 
   const handelShort=()=>{
-    fetch(`http://localhost:5000/shortData/${email}`)
+    fetch(`https://baby-car-cruise-server.vercel.app/shortData/${email}`)
     .then((res) => res.json())
     .then((data) => {
       if(data){

@@ -12,7 +12,7 @@ const UpdateData = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/update/${details._id}`, {
+    fetch(`https://baby-car-cruise-server.vercel.app/update/${details._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

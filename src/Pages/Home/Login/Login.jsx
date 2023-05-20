@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 import login from "../../../assets/sign-concept-illustration_114360-5425.avif";
+import ChangeTitle from "../../../Components/ChangeTitle";
 const Login = () => {
   const { singInUser, loginGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const Login = () => {
 
   return (
     <div className="flex p-10">
+      <ChangeTitle title='Login'></ChangeTitle>
       <div className=" bg-sky-100 w-1/2 ">
           <div className="p-14  bg-base-200 rounded    shadow-2xl">
             <div className="mb-6">

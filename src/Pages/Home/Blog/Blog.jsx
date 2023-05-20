@@ -1,11 +1,13 @@
 import React from "react";
+import ChangeTitle from "../../../Components/ChangeTitle";
 
 const Blog = () => {
   return (
     <>
+    <ChangeTitle title='Blog '></ChangeTitle>
       <h1 className="mx-auto mt-5 bg-sky-700 text-white md:w-40 w-full text-center rounded-md font-bold text-2xl">Blog Section</h1>
       <div className="md:m-8 md:mb-16 my-4 md:p-5 p-2 shadow-md h-96 overflow-y-scroll overflow-x-hidden">
-        <div className="hover:shadow-xl md:m-4 md:p-4 hover:bg-slate-200">
+        <div className="hover:shadow-xl md:m-4 md:p-4 duration-500 hover:bg-sky-300 hover:rounded-lg">
           <h2 className="font-bold text-xl mb-2">
             What is an access token and refresh token? How do they work and
             where should we store them on the client-side?
@@ -33,7 +35,7 @@ const Blog = () => {
             </p>
           </div>
         </div>
-        <div className="hover:shadow-xl md:m-4 md:p-4 hover:bg-slate-200 ">
+        <div className="hover:shadow-xl md:m-4 md:p-4 duration-500 hover:bg-sky-300 hover:rounded-lg">
           <h2 className="font-bold text-xl">
             Compare SQL and NoSQL databases?
           </h2>
@@ -44,7 +46,7 @@ const Blog = () => {
             that are non-relational and generally do not use SQL.
           </p>
         </div>
-        <div className="hover:shadow-xl md:m-4 md:p-4 hover:bg-slate-200 ">
+        <div className="hover:shadow-xl md:m-4 md:p-4 duration-500 hover:bg-sky-300 hover:rounded-lg ">
           <h2 className="font-bold text-xl">
             What is express js? What is Nest JS
           </h2>
@@ -56,7 +58,7 @@ const Blog = () => {
             used for creating static websites and SEO optimizations
           </p>
         </div>
-        <div className="hover:shadow-xl md:m-4 md:p-4 hover:bg-slate-200 hover:rounded-lg">
+        <div className="hover:shadow-xl md:m-4 md:p-4  hover:bg-sky-300 duration-500 hover:rounded-lg">
           <h2 className="font-bold text-xl">
             What is MongoDB aggregate and how does it work
           </h2>

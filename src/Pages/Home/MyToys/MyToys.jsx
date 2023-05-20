@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import ChangeTitle from "../../../Components/ChangeTitle";
 
 
 const MyToys = () => {
@@ -59,6 +60,7 @@ const MyToys = () => {
   
   return (
     <div >
+      <ChangeTitle title='My Toys'></ChangeTitle>
       <div className="py-5 ">
         <button onClick={handelShort} className="btn w-1/4 block mx-auto">Short Data</button>
       </div>

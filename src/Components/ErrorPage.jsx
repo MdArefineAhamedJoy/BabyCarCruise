@@ -1,5 +1,5 @@
 import React from 'react';
-import error from '../assets/29894-error-404-page.gif'
+
 
 const ErrorPage = () => {
     return (

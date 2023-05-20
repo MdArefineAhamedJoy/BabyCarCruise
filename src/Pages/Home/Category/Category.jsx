@@ -68,7 +68,7 @@ const Category = () => {
                       <p>Price : {data.price}</p>
                       </div>
                     </div>
-                    <Link to={user ? `category/${data._id}` : ""}>
+                    <Link to={ `category/${data._id}`}>
                       <button  className="w-full py-3 absolute bottom-0 rounded-b-md p-0   bg-sky-400 hover:bg-sky-500 duration-500 text-white font-semibold">
                         Show Details
                       </button>

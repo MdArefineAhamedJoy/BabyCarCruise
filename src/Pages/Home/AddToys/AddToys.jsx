@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import ChangeTitle from "../../../Components/ChangeTitle";
 const AddToys = () => {
   const { user } = useContext(AuthContext);
   const {
@@ -33,11 +34,12 @@ const AddToys = () => {
   };
 
   return (
-    <div className="md:w-10/12 bg-slate-600 mx-auto rounded">
-      <h1 className="text-center pt-12 text-4xl font-semibold text-white">
+    <div className="p-16 pt-5  mx-auto rounded">
+      <ChangeTitle title='Add Toys'></ChangeTitle>
+      <h1 className="text-center  text-4xl font-semibold text-zinc-600">
         ADDED PRODUCTS
       </h1>
-      <div className="p-10 shadow-lg">
+      <div className="p-10 bg-sky-200 pt-16 shadow-lg">
         <form className=" pb-10 " onSubmit={handleSubmit(onSubmit)}>
           <input
             className="p-3 w-full mb-3"
@@ -91,7 +93,7 @@ const AddToys = () => {
             />
           </div>
           <input
-            className="block btn mx-auto  w-full text-center mt-7 "
+            className="block btn-accent text-white font-xl btn mx-auto  w-full text-center mt-7 "
             type="submit"
           />
         </form>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import registers from '../../../assets/sign-up-concept-illustration_114360-7965.avif'
+import ChangeTitle from "../../../Components/ChangeTitle";
 const SingUp = () => {
     const {singUpUser} = useContext(AuthContext)
     const {
@@ -26,6 +27,7 @@ const SingUp = () => {
       };
   return (
     <div className="md:flex w-full p-10 bg-sky-100">
+      <ChangeTitle title='SingUp'></ChangeTitle>
       <div className=" w-1/2">
         <div className="p-10  bg-base-200 rounded   shadow-2xl">
           <div className="mb-6">

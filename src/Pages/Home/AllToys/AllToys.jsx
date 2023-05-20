@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import ChangeTitle from "../../../Components/ChangeTitle";
 
 const AllToys = () => {
   const [allData, setAllData] = useState([]);
@@ -27,10 +28,11 @@ const AllToys = () => {
 
   return (
     <div>
+      <ChangeTitle title='All Toys'></ChangeTitle>
       <div className="w-9/12  my-16  mx-auto ">
         <form className="flex w-8/12 mx-auto" onSubmit={handleSubmit(onSubmit)}>
           <input
-            className="bg-zinc-200 text-center px-4 outline-red-300 w-10/12 py-2  font-semibold text-lg mx-auto block"
+            className="bg-zinc-400 text-center px-4 outline-red-300 w-10/12 py-2  font-semibold text-lg mx-auto block"
             {...register("search", { required: true })}
           />
           <input

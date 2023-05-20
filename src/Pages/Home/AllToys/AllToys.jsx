@@ -33,7 +33,7 @@ const AllToys = () => {
         <form className="flex" onSubmit={handleSubmit(onSubmit)}>
           <input
             className="bg-zinc-200 px-4 outline-red-300 w-9/12 py-2  font-semibold text-lg mx-auto block"
-            {...register("search")}
+            {...register("search",{ required: true })}
           />
           <input className="btn w-3/12 btn-outline" type="submit"  value='Search'/>
         </form>
@@ -60,7 +60,7 @@ const AllToys = () => {
                       <div className="mask mask-squircle w-12 h-12">
                         <img
                           src={data.photo}
-                          alt="Avatar Tailwind CSS Component"
+                          alt="Avatar "
                         />
                       </div>
                     </div>

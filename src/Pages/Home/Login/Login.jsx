@@ -4,10 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 const Login = () => {
-    const {singInUser , loginGoogle} = useContext(AuthContext)
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location?.state?.from?.pathname || "/";
+  const { singInUser, loginGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -15,30 +15,30 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const email = data.email ;
+    const email = data.email;
     const password = data.password;
-    singInUser(email,password)
-    .then(res => {
-        const  lodgingUser = res.user 
+    singInUser(email, password)
+      .then((res) => {
+        const lodgingUser = res.user;
         // console.log(lodgingUser)
-        navigate(from, { replace: true })
-    })
-    .catch(error => {
-        console.log(error)
-    })
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  const handelGoogleLogin = ()=>{
+  const handelGoogleLogin = () => {
     loginGoogle()
-    .then(res => {
-        const googleLogin = res.use ;
-        navigate(from, { replace: true })
+      .then((res) => {
+        const googleLogin = res.use;
+        navigate(from, { replace: true });
         // console.log(googleLogin)
-    })
-    .catch(error => {
-        console.log(error.message)
-    })
-  }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return (
     <div className=" bg-green-500">
@@ -84,8 +84,11 @@ const Login = () => {
             <hr className=" border my-4 w-5/12 " />
           </div>
           <div className="flex justify-between">
-            <button onClick={handelGoogleLogin} className="btn btn-success w-5/12 ">
-                <FaGoogle className="me-2"></FaGoogle> Google
+            <button
+              onClick={handelGoogleLogin}
+              className="btn btn-success w-5/12 "
+            >
+              <FaGoogle className="me-2"></FaGoogle> Google
             </button>
             <button className="btn btn-success w-5/12">Success</button>
           </div>

@@ -28,7 +28,9 @@ const NavBar = () => {
           </Link>
         </>
       )}
-      <Link to='/blog'><li className="btn btn-ghost"> Blogs</li></Link>
+      <Link to="/blog">
+        <li className="btn btn-ghost"> Blogs</li>
+      </Link>
       {user ? (
         <Link onClick={handelLogOut} to="/singup">
           <li className="btn btn-ghost">SingOut</li>
@@ -79,8 +81,18 @@ const NavBar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu  menu-horizontal px-1">{nevItem}</ul>
         </div>
-        {user && (
-          <img className="w-9 h-9 rounded-full" src={user?.photoURL} alt="" />
+        {user ? (
+          <div className="relative">
+            <img
+              className="w-12 h-12 mx-2 rounded-full active:block"
+              src={user?.photoURL}
+            />
+            <div className="absolute top-16 right-4 w-60 p-2 pb:4   bg-green-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
+              <p className="text-white font-bold"> {user.displayName}</p>
+            </div>
+          </div>
+        ) : (
+          ""
         )}
       </div>
     </div>

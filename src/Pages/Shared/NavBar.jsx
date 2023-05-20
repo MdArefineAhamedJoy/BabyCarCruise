@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import logo from '../../assets/download (1).jpeg'
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -50,8 +51,8 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="navbar bg-sky-500 py-4">
-        <div className="navbar-start">
+      <div className="navbar bg-sky-400 md:text-white py-4">
+        <div className="navbar-start ">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost md:hidden">
               <svg
@@ -76,7 +77,9 @@ const NavBar = () => {
               {nevItem}
             </ul>
           </div>
+          <img className="w-14 h-14 rounded-md md:block hidden" src={logo} alt="" />
           <a className="font-bold text-3xl">BabyCarCruise</a>
+
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu  menu-horizontal px-1">{nevItem}</ul>

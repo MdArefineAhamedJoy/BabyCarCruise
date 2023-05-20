@@ -1,85 +1,18 @@
 import React from "react";
-import img from '../../../assets/istockphoto-534507755-170667a.jpg'
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import banner from "../../../assets/scene-with-happy-boy-playing-room_1308-38724.avif";
+
 const Banner = () => {
   return (
-    <div>
-      {/* <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img
-            src={img1}
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
-              ❮
-            </a>
-            <div className="w-8/12">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, esse qui, aliquid minima, placeat id enim harum ratione tempore eligendi sapiente vel omnis tenetur dolorem maxime odio quam velit quos?</p>
-            </div>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img
-            src={img2}
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img
-            src="/images/stock/photo-1414694762283-acccc27bca85.jpg"
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img
-            src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-      </div> */}
-       <Carousel>
-                <div>
-                    <img src={img} />
-                </div>
-                <div>
-                    <img src={img} />
-
-                </div>
-                <div>
-                    <img src={img} />
-
-                </div>
-            </Carousel>
+    <div className="hero mb-28 min-h-screen md:h-full h-1/2" style={{ backgroundImage: `url(${banner})` }}>
+    <div className="hero-overlay bg-opacity-40"></div>
+    <div className="hero-content text-center text-neutral-content">
+      <div className="max-w-md">
+        <h1 className="md:mb-5 text-3xl   md:text-5xl font-bold">Best Kids STore and Online Shop </h1>
+        <p className="mb-5 "> The Ultimate Online Shop and Store for Everything Your Child Needs!"</p>
+        <button className="btn btn-primary">Get  Shopping</button>
+      </div>
     </div>
+  </div>
   );
 };
 

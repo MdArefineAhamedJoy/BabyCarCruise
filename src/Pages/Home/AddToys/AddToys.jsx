@@ -11,7 +11,6 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data)
     fetch(`http://localhost:5000/category`, {
       method: "POST",
       headers: {
@@ -53,8 +52,8 @@ const AddToys = () => {
             />
             <input
               className="p-3"
-              placeholder="Name"
-              {...register("name", { required: true })}
+              placeholder="Toys Name"
+              {...register("toysname", { required: true })}
             />
             <input
               className="p-3"
@@ -81,7 +80,7 @@ const AddToys = () => {
               placeholder="Sub Category Name"
               {...register("categoryName", { required: true })}
             >
-              <option value="sports">Sports</option>
+              <option value="Sports">Sports</option>
               <option value="Avenger">Avenger</option>
               <option value="Soldier">Soldier</option>
             </select>

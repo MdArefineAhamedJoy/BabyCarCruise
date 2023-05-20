@@ -71,7 +71,7 @@ const MyToys = () => {
                     </div>
                     <div>
                       <div className="font-bold">{toys?.categoryName}</div>
-                      <div className="text-sm opacity-50">{toys?.name}</div>
+                      <div className="text-sm opacity-50">{toys?.toysname}</div>
                     </div>
                   </div>
                 </td>
@@ -90,7 +90,6 @@ const MyToys = () => {
                 <th>
                   <Link to={`/update/${toys._id}`}>
                     <button
-                      onClick={() => handelUpdate(toys._id)}
                       className="btn btn-circle  bg-green-950"
                     >
                       <FaEdit className="h-5 w-5"></FaEdit>

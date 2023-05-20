@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const AllToys = () => {
@@ -7,23 +8,29 @@ const AllToys = () => {
     fetch("http://localhost:5000/allCategories")
       .then((res) => res.json())
       .then((data) => {
-        setAllData(data);
+        const showData = data.slice(0, 20)
+        setAllData(showData);
       });
-  }, [allData]);
+  }, []);
   return (
     <div>
-      <input className="bg-red-500 w-6/12 mx-auto block" type="text" />
-      <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+     <div className="w-9/12 my-8 flex mx-auto ">
+     <input
+        className="bg-zinc-200 px-4 outline-red-300 w-9/12 py-2  font-semibold text-lg mx-auto block"
+        type="text"
+      />
+      <button className="btn w-3/12 btn-outline">Search</button>
+     </div>
+      <div className=" w-full hover:bg-slate-500">
+        <table className="table w-full ">
           {/* head */}
           <thead>
             <tr>
-              <th>NO</th>
-              <th>Product Image</th>
-              <th>Sailor Details</th>
-              <th>Quantity</th>
-              <th>Update</th>
-              <th>Delete</th>
+              <th className="text-lg">NO</th>
+              <th className="text-lg"> Image & Name</th>
+              <th className="text-lg">Sailor Details</th>
+              <th className="text-lg">Quantity</th>
+              <th className="text-lg">View Details</th>
             </tr>
           </thead>
           <tbody>
@@ -41,41 +48,31 @@ const AllToys = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{data?.categoryName}</div>
+                      <div className="font-bold">{data?.toysname}</div>
                       <div className="text-sm opacity-50">{data?.name}</div>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <span className="badge badge-ghost badge-sm">
-                    {data?.sellerName}
-                  </span>
+                  <span className="">Name : {data?.sellerName}</span>
                   <br />
-                  {data?.email}
+                  Email : {data?.email}
                 </td>
                 <td>
                   <span>Quantity :{data?.availableQuantity}</span>
                   <br />
                   <span>Rating : {data?.rating}</span>
                 </td>
-                <th>
-                  <Link to="/:id">
+
+                <td>
+                  <Link to={`category/${data._id}`}>
                     <button
-                      onClick={() => handelUpdate(data._id)}
-                      className="btn btn-circle  bg-green-950"
+                      className="py-3 px-8 rounded-md hover:bg-zinc-500 duration-500  text-white bg-zinc-700"
                     >
-                        ediot
+                      <FaArrowRight></FaArrowRight>
                     </button>
                   </Link>
-                </th>
-                <th>
-                  <button
-                    onClick={() => handelDelete(data._id)}
-                    className="btn btn-circle bg-red-300"
-                  >
-                    delete
-                  </button>
-                </th>
+                </td>
               </tr>
             ))}
           </tbody>

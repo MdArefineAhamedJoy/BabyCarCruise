@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 const Login = () => {
     const {singInUser , loginGoogle} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -17,7 +20,8 @@ const Login = () => {
     singInUser(email,password)
     .then(res => {
         const  lodgingUser = res.user 
-        console.log(lodgingUser)
+        // console.log(lodgingUser)
+        navigate(from, { replace: true })
     })
     .catch(error => {
         console.log(error)
@@ -28,7 +32,8 @@ const Login = () => {
     loginGoogle()
     .then(res => {
         const googleLogin = res.use ;
-        console.log(googleLogin)
+        navigate(from, { replace: true })
+        // console.log(googleLogin)
     })
     .catch(error => {
         console.log(error.message)

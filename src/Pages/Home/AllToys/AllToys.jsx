@@ -29,13 +29,13 @@ const AllToys = () => {
 
   return (
     <div>
-      <div className="w-9/12 bg-red-500 my-8  mx-auto ">
+      <div className="w-9/12  my-8  mx-auto ">
         <form className="flex" onSubmit={handleSubmit(onSubmit)}>
           <input
             className="bg-zinc-200 px-4 outline-red-300 w-9/12 py-2  font-semibold text-lg mx-auto block"
             {...register("search")}
           />
-          <input className="btn w-3/12 btn-outline" type="submit" />
+          <input className="btn w-3/12 btn-outline" type="submit"  value='Search'/>
         </form>
       </div>
       <div className=" w-full hover:bg-slate-500">

@@ -51,7 +51,7 @@ const Category = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid md:grid-cols-3">
+          <div className="grid md:grid-cols-3 gap-5">
             {categoryData.map((data) => (
               <div key={data._id}>
                 <div className="card relative  card-compact w-96 bg-zinc-300 shadow-lg">

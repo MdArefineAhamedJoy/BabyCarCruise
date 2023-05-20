@@ -86,6 +86,7 @@ const MyToys = () => {
                   <span>Quantity :{toys?.availableQuantity}</span>
                   <br />
                   <span>Rating : {toys?.rating}</span>
+                  <span>Rating : {toys?.price}</span>
                 </td>
                 <th>
                   <Link to={`/update/${toys._id}`}>

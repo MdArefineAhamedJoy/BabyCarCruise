@@ -58,7 +58,7 @@ const MyToys = () => {
   }
   
   return (
-    <div>
+    <div >
       <div className="py-5 ">
         <button onClick={handelShort} className="btn w-1/4 block mx-auto">Short Data</button>
       </div>
@@ -89,30 +89,21 @@ const MyToys = () => {
                         />
                       </div>
                     </div>
-                    <div>
-                      <div className="font-bold">{toys?.categoryName}</div>
-                      <div className="text-sm opacity-50">{toys?.toysname}</div>
-                    </div>
                   </div>
                 </td>
                 <td>
-                  <span className="badge badge-ghost badge-sm">
-                    {toys?.sellerName}
-                  </span>
-                  <br />
-                  {toys?.email}
+                <div className="font-bold">Name : {toys?.toysname}</div>
+                  <span>Email : {toys?.email}</span>
                 </td>
                 <td>
-                  <span>Quantity :{toys?.availableQuantity}</span>
-                  <br />
-                  <span>Rating : {toys?.rating}</span>
-                  <br />
                   <span>Price : {toys?.price}</span>
+                  <br />
+                  <span>Rating : {toys?.price}</span>
                 </td>
                 <th>
                   <Link to={`/update/${toys._id}`}>
                     <button
-                      className="btn btn-circle  bg-green-950"
+                      className="btn btn-circle  btn-accent"
                     >
                       <FaEdit className="h-5 w-5"></FaEdit>
                     </button>
@@ -121,7 +112,7 @@ const MyToys = () => {
                 <th>
                   <button
                     onClick={() => handelDelete(toys._id)}
-                    className="btn btn-circle bg-red-300"
+                    className="btn btn-circle btn-error text-white"
                   >
                     <FaTrashAlt className="h-5 w-5"></FaTrashAlt>
                   </button>

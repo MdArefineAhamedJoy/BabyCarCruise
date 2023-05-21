@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import logo from '../../assets/download (1).jpeg'
+import logo from "../../assets/download (1).jpeg";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -77,28 +77,35 @@ const NavBar = () => {
               {nevItem}
             </ul>
           </div>
-          <img className="w-14 h-14 rounded-md md:block hidden" src={logo} alt="" />
+          <img
+            className="w-14 h-14 rounded-md md:block hidden"
+            src={logo}
+            alt=""
+          />
           <a className="font-bold text-3xl">BabyCarCruise</a>
-
         </div>
-        <div className="navbar-end hidden lg:flex">
+        <div className="navbar-center hidden lg:flex">
           <ul className="menu  menu-horizontal px-1">{nevItem}</ul>
         </div>
-        <div className="navbar-end">
-        {user ? (
-          <div className="relative">
-            <img
-              className="w-12 h-12 mx-2 rounded-full active:block"
-              src={user?.photoURL}
-            />
-            <div className="absolute top-16 right-4 w-60 p-2 pb:4   bg-red-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
-              <p className="text-white font-bold"> {user.displayName}</p>
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
-        </div>
+<div className="navbar-end">
+  {user ? (
+                  <div className="relative">
+                  <img
+                    className="w-12 h-12 mx-2 rounded-full active:block"
+                    src={user?.photoURL}
+                  />
+                  <div className="absolute top-16 right-0 w-60 p-2 pb:4   bg-blue-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
+                    <p className="text-white font-bold">
+          
+                      {user.displayName}
+                    </p>
+                  </div>
+                </div>
+  ) : (
+    ""
+  )}
+</div>
+
       </div>
     </div>
   );

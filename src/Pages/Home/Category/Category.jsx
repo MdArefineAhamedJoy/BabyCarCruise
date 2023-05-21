@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, Tabs, TabList } from "react-tabs";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 
@@ -53,7 +53,7 @@ const Category = () => {
           </button>
         </TabList>
 
-        <TabPanel>
+        <div>
           <div className="grid md:grid-cols-3 pt-10 gap-5">
             {categoryData.map((data) => (
               <div key={data._id}>
@@ -79,53 +79,7 @@ const Category = () => {
               </div>
             ))}
           </div>
-        </TabPanel>
-
-        {/* <TabPanel>
-          <div className="grid md:grid-cols-3 border-3 border-red-500  gap-5">
-            {categoryData.map((data) => (
-              <div key={data._id}>
-                <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                  <figure className="bg-zinc-700">
-                    <img src={data.photo} alt="Shoes" />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">{data.categoryName}</h2>
-                    <p>Price : {data.price}</p>
-                    <div className="card-actions justify-end">
-                      <Link to={`category/${data._id}`}>
-                        <button className="btn btn-primary">Buy Now</button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </TabPanel>
-
-        <TabPanel>
-          <div className="grid md:grid-cols-3 gap-5">
-            {categoryData.map((data) => (
-              <div key={data._id}>
-                <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                  <figure className="bg-zinc-700">
-                    <img src={data.photo} alt="Shoes" />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">{data.categoryName}</h2>
-                    <p>Price : {data.price}</p>
-                    <div className="card-actions justify-end">
-                      <Link to={`category/${data._id}`}>
-                        <button className="btn btn-primary">Buy Now</button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </TabPanel> */}
+        </div>
       </Tabs>
     </div>
   );

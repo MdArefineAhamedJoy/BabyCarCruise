@@ -9,13 +9,14 @@ import ChangeTitle from "../../../Components/ChangeTitle";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [dynamicShort , setDynamicShort] = useState('')
   const email = user?.email;
   useEffect(() => {
-    fetch(`https://baby-car-cruise-server.vercel.app/user/${email}`)
+    fetch(`https://baby-car-cruise-server.vercel.app/user/${email}/?shorts=${dynamicShort}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [email]);
-  
+  }, [ dynamicShort, myToys]);
+ 
   const handelDelete = (_id) => {
       Swal.fire({
         title: 'Are you sure?',
@@ -40,29 +41,13 @@ const MyToys = () => {
       })
   };
 
-  const handelShort=()=>{
-    fetch(`https://baby-car-cruise-server.vercel.app/shortData/${email}`)
-    .then((res) => res.json())
-    .then((data) => {
-      if(data){
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Data Short Successfully',
-          showConfirmButton: false,
-          timer: 1000
-        })
-        setMyToys(data)
-      }
-
-    });
-  }
   
   return (
     <div >
       <ChangeTitle title='My Toys'></ChangeTitle>
-      <div className="py-5 ">
-        <button onClick={handelShort} className="btn w-1/4 block mx-auto">Short Data</button>
+      <div className="py-5  ">
+        <button onClick={()=>setDynamicShort(-1)} className={dynamicShort=== -1 ? "btn btn-accent rounded-none":' px-4 py-3 uppercase ' }>Big To Small </button>
+        <button onClick={()=>setDynamicShort(1)} className={dynamicShort=== 1 ? "btn btn-accent rounded-none":' px-4 py-3 uppercase' }>Small To Big</button>
       </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">

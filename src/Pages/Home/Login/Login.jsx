@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
@@ -10,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
+  const [error , setError] = useState('')
   const {
     register,
     handleSubmit,
@@ -26,7 +27,8 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
+        setError(error.message)
       });
   };
 
@@ -39,6 +41,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        setError(error.message)
       });
   };
 
@@ -70,7 +73,6 @@ const Login = () => {
               <div>
                 <div className="flex justify-between pb-1">
                   <span>Password</span>
-                  <span className=" link ">Forget Password ?</span>
                 </div>
                 <input
                   required
@@ -97,7 +99,7 @@ const Login = () => {
               </button>
             </div>
           </div>
-
+          <div>{error}</div>
       </div>
       <div className="w-1/2">
         <img src={login} alt="" />

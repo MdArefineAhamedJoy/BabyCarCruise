@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList } from "react-tabs";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Category = () => {
@@ -19,6 +20,18 @@ const Category = () => {
     setCategoryName(data);
   };
 
+  const handelMessage=(users )=>{
+    if(user){
+      return <Link to={`category/${data._id}`}></Link>
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Place Login Fast !",
+      })
+      return <Link to='/login'></Link>
+    }
+  }
  
   return (
     <div className="my-10">
@@ -69,7 +82,7 @@ const Category = () => {
                       <p>Price : {data.price}</p>
                       </div>
                     </div>
-                    <Link to={ `category/${data._id}`}>
+                    <Link onClick={handelMessage} to={ `category/${data._id}`}>
                       <button  className="w-full py-3 absolute bottom-0 rounded-b-md p-0   bg-sky-400 hover:bg-sky-500 duration-500 text-white font-semibold">
                         Show Details
                       </button>

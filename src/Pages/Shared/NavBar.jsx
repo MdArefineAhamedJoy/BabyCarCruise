@@ -82,30 +82,26 @@ const NavBar = () => {
             src={logo}
             alt=""
           />
-          <a className="font-bold text-3xl">BabyCarCruise</a>
+          <a className="font-bold md:text-3xl text-xl ">BabyCarCruise</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu  menu-horizontal px-1">{nevItem}</ul>
         </div>
-<div className="navbar-end">
-  {user ? (
-                  <div className="relative">
-                  <img
-                    className="w-12 h-12 mx-2 rounded-full active:block"
-                    src={user?.photoURL}
-                  />
-                  <div className="absolute top-16 right-0 w-60 p-2 pb:4   bg-blue-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
-                    <p className="text-white font-bold">
-          
-                      {user.displayName}
-                    </p>
-                  </div>
-                </div>
-  ) : (
-    ""
-  )}
-</div>
-
+        <div className="navbar-end">
+          {user ? (
+            <div className="relative">
+              <img
+                className="w-12 h-12 mx-2 rounded-full active:block"
+                src={user?.photoURL}
+              />
+              <div className="absolute top-16 right-0 w-60 p-2 pb:4   bg-blue-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
+                <p className="text-white font-bold">{user.displayName}</p>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

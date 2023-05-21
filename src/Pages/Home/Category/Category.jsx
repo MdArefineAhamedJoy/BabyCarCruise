@@ -18,7 +18,7 @@ const Category = () => {
     setCategoryName(data);
   };
 
-  console.log(categoryData);
+ 
   return (
     <div className="my-10">
       <Tabs>

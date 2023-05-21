@@ -7,9 +7,10 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const Category = () => {
   const { user } = useContext(AuthContext)
   const [categoryName, setCategoryName] = useState("Sports");
+  const [queryValue , setQuery ] = useState('')
   const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
-    fetch(`https://baby-car-cruise-server.vercel.app/category/${categoryName}`)
+    fetch(`https://baby-car-cruise-server.vercel.app/category/${categoryName}=${1}`)
       .then((res) => res.json())
       .then((data) => setCategoryData(data));
   }, [categoryName]);

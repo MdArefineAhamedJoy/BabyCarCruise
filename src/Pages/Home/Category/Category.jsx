@@ -10,7 +10,7 @@ const Category = () => {
   const [queryValue , setQuery ] = useState('')
   const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
-    fetch(`https://baby-car-cruise-server.vercel.app/category/${categoryName}=${1}`)
+    fetch(`https://baby-car-cruise-server.vercel.app/category/${categoryName}`)
       .then((res) => res.json())
       .then((data) => setCategoryData(data));
   }, [categoryName]);
